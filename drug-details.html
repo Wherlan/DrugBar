@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Details - drugBar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        section {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .review-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .form-control textarea {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Drug Name</h1>
+        <p>Detailed Information on Drug Name</p>
+    </header>
+
+    <section>
+        <h2>Overview</h2>
+        <p><strong>Category:</strong> Pain Reliever</p>
+        <p><strong>Indication:</strong> Used for headaches and muscle pain.</p>
+        <p><strong>Dosage:</strong> Take one tablet every 4-6 hours as needed. Do not exceed 4 tablets in 24 hours.</p>
+        <p><strong>Side Effects:</strong> Possible side effects include nausea, dizziness, and allergic reactions.</p>
+<div>
+
+        <h2>Active Ingredients</h2>
+        <p>Acetaminophen 500mg, Ibuprofen 200mg.</p>
+
+        <h2>Contraindications</h2>
+        <p>Not recommended for individuals with severe liver or kidney disease. Consult a doctor if you are pregnant or breastfeeding.</p>
+
+        <h2>Storage Instructions</h2>
+        <p>Store at room temperature, away from light and moisture. Keep out of reach of children.</p>
+
+        <h2>Manufacturer Details</h2>
+        <p><strong>Manufacturer:</strong> XYZ Pharmaceuticals</p>
+        <p><strong>Address:</strong> 123 Pharma St, City, State, Zip</p>
+        <p><strong>Contact:</strong> (123) 456-7890</p>
+
+        <h2>Instructions for Use</h2>
+        <p>Always take this medication exactly as your doctor has told you. If you are not sure, check with your doctor or pharmacist.</p>
+    </div>
+    
+        <h2>User Reviews</h2>
+        <div id="reviews">
+            <div class="review-card">
+                <p><strong>User123:</strong> This drug really helped with my headache! Highly recommend.</p>
+                <p><strong>Rating:</strong> ★★★★☆</p>
+            </div>
+            <div class="review-card">
+                <p><strong>User456:</strong> Had some nausea after taking it, but it worked well for the pain.</p>
+                <p><strong>Rating:</strong> ★★★☆☆</p>
+            </div>
+        </div>
+
+        <h2>Add Your Review</h2>
+        <form>
+            <textarea placeholder="Write your review here..." class="form-control"></textarea>
+            <select class="form-control">
+                <option value="">Rate this drug</option>
+                <option value="1">★☆☆☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="4">★★★★☆</option>
+                <option value="5">★★★★★</option>
+            </select>
+            <button type="submit" class="btn btn-success">Submit Review</button>
+        </form>
+
+        <h2>Report an Issue</h2>
+        <form>
+            <textarea placeholder="Describe the issue..." class="form-control"></textarea>
+            <button type="submit" class="btn btn-danger">Report Issue</button>
+        </form>
+
+        <div style="margin-top: 30px;">
+            <button onclick="addToFavorites()" class="btn btn-primary">Add to Favorites</button>
+        </div>
+
+        <h2>FAQ</h2>
+        <div>
+            <h4>Q: Can I take this drug with other medications?</h4>
+            <p>A: Consult your doctor or pharmacist before combining medications.</p>
+
+            <h4>Q: How long does it take for this drug to work?</h4>
+            <p>A: You should start feeling relief within 30 minutes of taking the medication.</p>
+
+            <h4>Q: Is this drug safe for children?</h4>
+            <p>A: Consult a pediatrician before giving this medication to children.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToFavorites() {
+            alert("Drug added to your favorites!");
+        }
+    </script>
+</body>
+</html>

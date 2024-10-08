@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pain Relievers - drugBar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f1f3f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #28a745;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #28a745;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .drug-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+        .drug-card:hover {
+            background-color: #f8f9fa;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .drug-card h3 {
+            font-size: 1.4rem;
+            color: #007bff;
+            margin: 0;
+        }
+        .drug-details {
+            display: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .drug-details p {
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pain Relievers</h1>
+        <p>List of available pain reliever medications</p>
+    </header>
+
+    <section>
+        <h2>Available Pain Relievers</h2>
+
+        <!-- Ibuprofen Drug Card -->
+        <div class="drug-card" onclick="toggleDrugDetails('ibuprofen-details')">
+            <h3>Ibuprofen</h3>
+            <p>Indication: Mild to moderate pain relief.</p>
+        </div>
+        <div id="ibuprofen-details" class="drug-details">
+            <p><strong>Name:</strong> Ibuprofen</p>
+            <p><strong>Indication:</strong> Used for mild to moderate pain relief, such as headaches, toothaches, and menstrual cramps.</p>
+            <p><strong>Dosage Forms:</strong> Tablets, liquid suspension, topical gel.</p>
+            <p><strong>Manufacturer:</strong> XYZ Pharmaceuticals</p>
+            <p><strong>Manufacturing Date:</strong> 2023-02-10</p>
+            <p><strong>NAFDAC Number:</strong> 04-1234</p>
+            <p><strong>Registration Expiry:</strong> 2025-06-30</p>
+            <p><strong>Side Effects:</strong> Nausea, stomach pain, dizziness.</p>
+            <p><strong>Warnings:</strong> Avoid in patients with ulcers or kidney disease. Take with food to reduce stomach irritation.</p>
+            <p><strong>Storage Conditions:</strong> Store in a cool, dry place.</p>
+            <p><strong>Other Information:</strong> Commonly available over-the-counter for pain relief.</p>
+        </div>
+
+        <!-- Acetaminophen Drug Card -->
+        <div class="drug-card" onclick="toggleDrugDetails('acetaminophen-details')">
+            <h3>Acetaminophen</h3>
+            <p>Indication: Effective for reducing fever and relieving pain.</p>
+        </div>
+        <div id="acetaminophen-details" class="drug-details">
+            <p><strong>Name:</strong> Acetaminophen</p>
+            <p><strong>Indication:</strong> Effective for reducing fever and relieving pain from various conditions.</p>
+            <p><strong>Dosage Forms:</strong> Tablets, capsules, liquid suspension.</p>
+            <p><strong>Manufacturer:</strong> ABC Pharmaceuticals</p>
+            <p><strong>Manufacturing Date:</strong> 2022-08-15</p>
+            <p><strong>NAFDAC Number:</strong> 05-5678</p>
+            <p><strong>Registration Expiry:</strong> 2024-12-15</p>
+            <p><strong>Side Effects:</strong> Nausea, skin rash, liver toxicity (overdose).</p>
+            <p><strong>Warnings:</strong> Overuse may cause liver damage. Do not combine with other acetaminophen-containing products.</p>
+            <p><strong>Storage Conditions:</strong> Store in a cool, dry place.</p>
+            <p><strong>Other Information:</strong> Often used in combination with other medications like codeine.</p>
+        </div>
+
+        <!-- Aspirin Drug Card -->
+        <div class="drug-card" onclick="toggleDrugDetails('aspirin-details')">
+            <h3>Aspirin</h3>
+            <p>Indication: Pain relief and anti-inflammatory.</p>
+        </div>
+        <div id="aspirin-details" class="drug-details">
+            <p><strong>Name:</strong> Aspirin</p>
+            <p><strong>Indication:</strong> Used for pain relief and to reduce inflammation; also acts as a blood thinner.</p>
+            <p><strong>Dosage Forms:</strong> Tablets, enteric-coated tablets, chewable tablets.</p>
+            <p><strong>Manufacturer:</strong> DEF Pharmaceuticals</p>
+            <p><strong>Manufacturing Date:</strong> 2023-05-20</p>
+            <p><strong>NAFDAC Number:</strong> 06-9101</p>
+            <p><strong>Registration Expiry:</strong> 2026-03-10</p>
+            <p><strong>Side Effects:</strong> Stomach irritation, bleeding, ulcers.</p>
+            <p><strong>Warnings:</strong> Not suitable for individuals with bleeding disorders or children under 12 (risk of Reye's syndrome).</p>
+            <p><strong>Storage Conditions:</strong> Store in a cool, dry place.</p>
+            <p><strong>Other Information:</strong> Commonly used to prevent heart attacks in low doses.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDrugDetails(drugId) {
+            var details = document.getElementById(drugId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

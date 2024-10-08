@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Drug Repository</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #343a40;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Styles */
+        .dashboard-container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-container h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+            color: #333;
+        }
+
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .section {
+            flex: 1;
+            background-color: #e9ecef;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .section a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            font-size: 2.5em;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        /* Icon for each section */
+        .icon.manage-drugs::before {
+            content: "\2699"; /* Gear icon for Manage Drugs */
+        }
+
+        .icon.user-profiles::before {
+            content: "\1F464"; /* User icon for User Profiles */
+        }
+
+        .icon.search-trends::before {
+            content: "\1F50D"; /* Magnifying glass for Search Trends */
+        }
+
+        .icon.drug-categories::before {
+            content: "\1F4DC"; /* Book icon for Drug Categories */
+        }
+
+        .icon.search-drugs::before {
+            content: "\1F50E"; /* Magnifying glass tilted for Search Drugs */
+        }
+
+        .icon.contact-support::before {
+            content: "\1F4AC"; /* Speech bubble for Contact Support */
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .section-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Drug Repository Dashboard</h1>
+    </header>
+
+    <!-- Navigation Links -->
+    <nav>
+        <a href="search.html">Search Drugs</a>
+        <a href="categories.html">Categories</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-container">
+        <h2>Welcome to Your Dashboard</h2>
+
+        <div class="section-container">
+            <!-- Manage Drugs Section -->
+            <div class="section">
+                <div class="icon manage-drugs"></div>
+                <h3>Manage Drugs</h3>
+                <p>View, add, or update drug information.</p>
+                <a href="search.html">Manage Drugs</a>
+            </div>
+
+            <!-- User Profiles Section -->
+            <div class="section">
+                <div class="icon user-profiles"></div>
+                <h3>User Profiles</h3>
+                <p>View and manage user information.</p>
+                <a href="profile.html">View Profiles</a>
+            </div>
+
+            <!-- Search Trends Section -->
+            <div class="section">
+                <div class="icon search-trends"></div>
+                <h3>Search Trends</h3>
+                <p>Monitor popular searches and trends.</p>
+                <a href="trends.html">View Trends</a>
+            </div>
+        </div>
+
+        <div class="section-container" style="margin-top: 30px;">
+            <!-- Drug Categories Section -->
+            <div class="section">
+                <div class="icon drug-categories"></div>
+                <h3>Drug Categories</h3>
+                <p>Browse drugs by categories.</p>
+                <a href="categories.html">View Categories</a>
+            </div>
+
+            <!-- Search Drugs Section -->
+            <div class="section">
+                <div class="icon search-drugs"></div>
+                <h3>Search Drugs</h3>
+                <p>Find specific drugs in the repository.</p>
+                <a href="search.html">Search Drugs</a>
+            </div>
+
+            <!-- Contact Support Section -->
+            <div class="section">
+                <div class="icon contact-support"></div>
+                <h3>Contact Support</h3>
+                <p>Get help or ask questions.</p>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

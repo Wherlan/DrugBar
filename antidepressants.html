@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antidepressants - drugBar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff; 
+            padding: 20px; 
+            color: white; 
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .drug-card {
+            background-color: #e9ecef; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        .drug-card:hover {
+            background-color: #ced4da; 
+        }
+        footer {
+            background-color: #007bff; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Antidepressants</h1>
+        <p>List of available antidepressants</p>
+    </header>
+
+    <section>
+        <h2 style="color: #007bff; margin-bottom: 20px;">Available Antidepressants</h2>
+        
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant A')">
+            <h3>Antidepressant A</h3>
+            <p>Indication: Used to treat major depressive disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant B')">
+            <h3>Antidepressant B</h3>
+            <p>Indication: Effective for anxiety and depression.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant C')">
+            <h3>Antidepressant C</h3>
+            <p>Indication: Commonly prescribed for panic disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant D')">
+            <h3>Antidepressant D</h3>
+            <p>Indication: Used for obsessive-compulsive disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant E')">
+            <h3>Antidepressant E</h3>
+            <p>Indication: Treats social anxiety disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant F')">
+            <h3>Antidepressant F</h3>
+            <p>Indication: Prescribed for chronic pain and depression.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant G')">
+            <h3>Antidepressant G</h3>
+            <p>Indication: Used for seasonal affective disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant H')">
+            <h3>Antidepressant H</h3>
+            <p>Indication: Effective for generalized anxiety disorder.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant I')">
+            <h3>Antidepressant I</h3>
+            <p>Indication: Treats depressive episodes.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antidepressant J')">
+            <h3>Antidepressant J</h3>
+            <p>Indication: Commonly used for post-traumatic stress disorder.</p>
+        </div>
+        <!-- Add more antidepressants as necessary -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function viewDrugDetails(drugName) {
+            alert(`Navigating to details of ${drugName}...`);
+            // Here you can redirect to the specific drug details page
+            // Example: window.location.href = "drug_details.html?drug=" + drugName;
+        }
+    </script>
+
+</body>
+</html>

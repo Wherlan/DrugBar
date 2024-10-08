@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - drugBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        header {
+            background-color: #0056b3;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .btn-custom {
+            background-color: #0056b3;
+            color: white;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Manage Users - drugBar</h1>
+</header>
+
+<div class="container">
+    <h2 class="my-4">User Management</h2>
+    <form id="user-form" class="mb-3">
+        <div class="row mb-3">
+            <div class="col">
+                <input type="email" id="user-email" class="form-control" placeholder="User Email" required>
+            </div>
+            <div class="col">
+                <input type="password" id="user-password" class="form-control" placeholder="Password" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-custom">Add User</button>
+    </form>
+
+    <h3>User List</h3>
+    <div id="user-list" class="list-group">
+        <!-- Existing users will be listed here -->
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Simulate adding a new user
+    document.getElementById("user-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const userEmail = document.getElementById("user-email").value;
+        const userPassword = document.getElementById("user-password").value;
+
+        // Append the new user to the user list
+        const userList = document.querySelector("#user-list");
+        const userItem = document.createElement("div");
+        userItem.classList.add("list-group-item");
+        userItem.innerHTML = `
+            <strong>${userEmail}</strong>
+            <div>
+                <button class="btn btn-info btn-sm" onclick="editUser(this)">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="removeUser(this)">Remove</button>
+            </div>
+        `;
+        userList.appendChild(userItem);
+
+        // Clear the input fields
+        document.getElementById("user-form").reset();
+    });
+
+    // Function to remove a user from the list
+    function removeUser(button) {
+        const userItem = button.parentElement.parentElement;
+        userItem.remove();
+    }
+
+    // Function to edit a user (for demonstration purposes)
+    function editUser(button) {
+        const userItem = button.parentElement.parentElement;
+        const userEmail = userItem.querySelector('strong').textContent;
+
+        // Prompt user for new email and password
+        const newEmail = prompt("Edit user email:", userEmail);
+        const newPassword = prompt("Edit user password:");
+
+        if (newEmail && newPassword) {
+            userItem.querySelector('strong').textContent = newEmail;
+            // You can add functionality here to update the password as needed
+        }
+    }
+</script>
+</body>
+</html>

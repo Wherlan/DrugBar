@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - drugBar</title>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent form submission for demo
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Retrieve registered credentials from localStorage
+            const registeredEmail = localStorage.getItem("registeredEmail");
+            const registeredPassword = localStorage.getItem("registeredPassword");
+
+            // Validate the email and password
+            if (email === registeredEmail && password === registeredPassword) {
+                alert("Login successful! Redirecting...");
+                // Redirect to the dashboard or another page
+                window.location.href = "dashboard.html"; // Change to your dashboard page
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #e9f5f0;">
+
+    <header style="background-color: #4CAF50; padding: 20px; color: white; text-align: center;">
+        <h1 style="margin: 0;">Login to drugBar</h1>
+    </header>
+
+    <section style="padding: 40px; max-width: 400px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 50px;">
+        <h2 style="color: #4CAF50; margin-bottom: 20px; text-align: center;">Welcome!</h2>
+        <form onsubmit="validateLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="email" id="email" placeholder="Email Address" required style="padding: 12px; border: 1px solid #ced4da; border-radius: 5px; font-size: 16px;">
+            <input type="password" id="password" placeholder="Password" required style="padding: 12px; border: 1px solid #ced4da; border-radius: 5px; font-size: 16px;">
+            <button type="submit" style="padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Login</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+            Don't have an account? <a href="signup.html" style="color: #4CAF50; text-decoration: none;">Sign up here</a>
+        </p>
+    </section>
+
+    <footer style="background-color: #4CAF50; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

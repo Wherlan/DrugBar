@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to drugBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #333;
+            background: url('images/deg.png') no-repeat center center fixed; /* Updated to use deg.png */
+            background-size: cover;
+        }
+        header {
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        header h1, header p {
+            z-index: 2;
+            position: relative;
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        header p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #495057;
+            padding: 15px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #adb5bd;
+            color: #343a40;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .highlight-section {
+            background-color: rgba(248, 249, 250, 0.9); /* Slightly transparent background */
+            padding: 80px 20px;
+        }
+        .cta-buttons a {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        .cta-buttons a:hover {
+            background-color: #218838;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 40px;
+            border-radius: 15px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        .feature-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            width: 350px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feature-box i {
+            font-size: 50px;
+            color: #495057;
+        }
+        .feature-box h3 {
+            color: #343a40;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .feature-box p {
+            font-size: 1.1em;
+            color: #6c757d;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        footer p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to drugBar</h1>
+        <p>Your trusted online drug repository</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="login.html">User Login</a>
+            <a href="admin-login.html">Admin Login</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="highlight-section">
+        <h2 style="color: #495057; margin-bottom: 20px;">Discover Safe and Effective Medications</h2>
+        <p style="max-width: 700px; margin: 0 auto 30px; line-height: 1.8; font-size: 1.2em; color: #6c757d;">
+            drugBar offers you the most comprehensive information about a wide range of medications. Explore detailed drug data, including usage instructions, potential side effects, and official NAFDAC registration numbers.
+        </p>
+        <div class="cta-buttons">
+            <a href="login.html">User Login</a>
+            <a href="admin-login.html">Admin Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <div class="image-section">
+            <img src="https://source.unsplash.com/1200x600/?medicine,health" alt="Medicine Image">
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature-box">
+            <i class="fas fa-pills"></i>
+            <h3>Extensive Drug Database</h3>
+            <p>Find detailed information on a variety of medications, including side effects, dosages, and interactions. NAFDAC registration numbers are also included for all drugs.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-user-md"></i>
+            <h3>Expert Guidance</h3>
+            <p>Get insights from medical professionals and pharmaceutical experts to make safe decisions regarding medication usage.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Secure Data</h3>
+            <p>All your information is safely stored and protected with our advanced encryption methods, ensuring security for both users and admins.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

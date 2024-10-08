@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Drugs - drugBar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5;
+        }
+        header {
+            background-color: #4a90e2; 
+            padding: 20px; 
+            color: white; 
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: calc(100% - 22px); 
+            padding: 15px; 
+            border: 1px solid #d3d3d3; 
+            border-radius: 8px; 
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        button {
+            padding: 12px 0; 
+            background-color: #4a90e2; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 1.1em;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .result-card {
+            background-color: #e9ecef; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            border: 1px solid #dee2e6;
+            transition: transform 0.3s;
+        }
+        .result-card:hover {
+            transform: scale(1.02);
+        }
+        .result-card h4 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #4a90e2; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Search Drugs</h1>
+    </header>
+
+    <section>
+        <h2 style="color: #4a90e2; margin-bottom: 30px; text-align: center;">Find the Right Medication</h2>
+        <input type="text" id="searchInput" placeholder="Enter drug, illness, or symptom" oninput="filterResults()">
+        <button onclick="searchDrugs()">Search</button>
+        
+        <div id="resultsContainer"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const drugData = {
+            "Headaches": [
+                {
+                    name: "Aspirin",
+                    category: "Pain Relievers",
+                    description: "Used to relieve pain, reduce inflammation, and lower fever.",
+                    dosage: "500mg every 4-6 hours",
+                    sideEffects: "Nausea, stomach pain, heartburn",
+                    interactions: "Avoid taking with alcohol, consult your doctor before using if you're on blood thinners.",
+                    manufacturer: "Bayer Pharmaceuticals",
+                    NAFDAC: "04-1234"
+                },
+                {
+                    name: "Ibuprofen",
+                    category: "Pain Relievers",
+                    description: "Nonsteroidal anti-inflammatory drug (NSAID) used for pain relief.",
+                    dosage: "200-400mg every 4-6 hours",
+                    sideEffects: "Nausea, dizziness, stomach upset",
+                    interactions: "Avoid using with other NSAIDs, consult your doctor if pregnant.",
+                    manufacturer: "Pfizer",
+                    NAFDAC: "07-5678"
+                }
+            ],
+            "Malaria": [
+                {
+                    name: "ACTs (Artemisinin-based Combination Therapies)",
+                    category: "Antimalarials",
+                    description: "Used to treat uncomplicated malaria.",
+                    dosage: "As prescribed by a doctor, typically 3 days of treatment.",
+                    sideEffects: "Nausea, vomiting, headache",
+                    interactions: "Avoid alcohol, consult your doctor if pregnant.",
+                    manufacturer: "Novartis",
+                    NAFDAC: "09-2345"
+                }
+            ]
+        };
+
+        function searchDrugs() {
+            const query = document.getElementById("searchInput").value.trim().toLowerCase();
+            const resultsContainer = document.getElementById("resultsContainer");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            const illnessMap = {
+                'headaches': 'Headaches',
+                'malaria': 'Malaria'
+            };
+
+            const illness = illnessMap[query];
+            if (illness) {
+                const drugs = drugData[illness];
+                const heading = document.createElement("h3");
+                heading.textContent = `Drugs for ${illness}`;
+                resultsContainer.appendChild(heading);
+
+                drugs.forEach(drug => {
+                    const resultCard = document.createElement("div");
+                    resultCard.classList.add("result-card");
+                    resultCard.innerHTML = `
+                        <h4>${drug.name}</h4>
+                        <p><strong>Category:</strong> ${drug.category}</p>
+                        <p><strong>Description:</strong> ${drug.description}</p>
+                        <p><strong>Dosage:</strong> ${drug.dosage}</p>
+                        <p><strong>Side Effects:</strong> ${drug.sideEffects}</p>
+                        <p><strong>Drug Interactions:</strong> ${drug.interactions}</p>
+                        <p><strong>Manufacturer:</strong> ${drug.manufacturer}</p>
+                        <p><strong>NAFDAC No:</strong> ${drug.NAFDAC}</p>
+                    `;
+                    resultsContainer.appendChild(resultCard);
+                });
+            } else {
+                resultsContainer.innerHTML = "<p>No results found. Please enter 'headaches' or 'malaria'.</p>";
+            }
+        }
+
+        function filterResults() {
+            const query = document.getElementById("searchInput").value;
+            if (query.length === 0) {
+                document.getElementById("resultsContainer").innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html>

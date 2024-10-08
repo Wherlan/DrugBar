@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy Medications - drugBar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff; 
+            padding: 20px; 
+            color: white; 
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .drug-card {
+            background-color: #e9ecef; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        .drug-card:hover {
+            background-color: #ced4da; 
+        }
+        footer {
+            background-color: #007bff; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Allergy Medications</h1>
+        <p>List of available allergy medications</p>
+    </header>
+
+    <section>
+        <h2 style="color: #007bff; margin-bottom: 20px;">Available Allergy Medications</h2>
+        
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med A')">
+            <h3>Allergy Med A</h3>
+            <p>Indication: Relieves symptoms of seasonal allergies.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med B')">
+            <h3>Allergy Med B</h3>
+            <p>Indication: Treats allergic rhinitis and hay fever.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med C')">
+            <h3>Allergy Med C</h3>
+            <p>Indication: Effective for itching and rashes.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med D')">
+            <h3>Allergy Med D</h3>
+            <p>Indication: Used to manage asthma symptoms.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med E')">
+            <h3>Allergy Med E</h3>
+            <p>Indication: Treats chronic urticaria (hives).</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med F')">
+            <h3>Allergy Med F</h3>
+            <p>Indication: Combines antihistamine and decongestant.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med G')">
+            <h3>Allergy Med G</h3>
+            <p>Indication: Reduces nasal congestion and runny nose.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med H')">
+            <h3>Allergy Med H</h3>
+            <p>Indication: Used for allergic conjunctivitis.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med I')">
+            <h3>Allergy Med I</h3>
+            <p>Indication: Treats eczema and skin allergies.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Allergy Med J')">
+            <h3>Allergy Med J</h3>
+            <p>Indication: Provides relief from severe allergic reactions.</p>
+        </div>
+        <!-- Add more allergy medications as necessary -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function viewDrugDetails(drugName) {
+            alert(`Navigating to details of ${drugName}...`);
+            // Here you can redirect to the specific drug details page
+            // Example: window.location.href = "drug_details.html?drug=" + drugName;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - drugBar</title>
+    <script>
+        // Function to load user details
+        function loadUserDetails() {
+            document.getElementById("fullName").value = localStorage.getItem("registeredFullName") || '';
+            document.getElementById("email").value = localStorage.getItem("registeredEmail") || '';
+            document.getElementById("phoneNumber").value = localStorage.getItem("registeredPhoneNumber") || '';
+            document.getElementById("address").value = localStorage.getItem("registeredAddress") || '';
+        }
+
+        // Function to update user details
+        function updateUserDetails(event) {
+            event.preventDefault();
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const address = document.getElementById("address").value;
+
+            // Store updated user data in localStorage
+            localStorage.setItem("registeredFullName", fullName);
+            localStorage.setItem("registeredEmail", email);
+            localStorage.setItem("registeredPhoneNumber", phoneNumber);
+            localStorage.setItem("registeredAddress", address);
+
+            alert("Profile updated successfully!");
+            // Reload the page to reflect changes
+            loadUserDetails();
+        }
+
+        // Load user details on page load
+        window.onload = loadUserDetails;
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #f8f9fa;">
+
+    <header style="background-color: #007bff; padding: 20px; color: white; text-align: center;">
+        <h1 style="margin: 0;">User Profile</h1>
+    </header>
+
+    <section style="padding: 40px; max-width: 500px; margin: 20px auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #007bff; margin-bottom: 20px; text-align: center;">Profile Information</h2>
+        <form onsubmit="updateUserDetails(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" id="fullName" placeholder="Full Name" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <input type="email" id="email" placeholder="Email Address" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;" disabled>
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <textarea id="address" placeholder="Address" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px; height: 60px;"></textarea>
+            <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Update Profile</button>
+        </form>
+    </section>
+
+    <footer style="background-color: #007bff; color: white; text-align: center; padding: 20px;">
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

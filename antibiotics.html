@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antibiotics - drugBar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff; 
+            padding: 20px; 
+            color: white; 
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .drug-card {
+            background-color: #e9ecef; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        .drug-card:hover {
+            background-color: #ced4da; 
+        }
+        footer {
+            background-color: #007bff; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Antibiotics</h1>
+        <p>List of available antibiotics</p>
+    </header>
+
+    <section>
+        <h2 style="color: #007bff; margin-bottom: 20px;">Available Antibiotics</h2>
+        
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic A')">
+            <h3>Antibiotic A</h3>
+            <p>Indication: Effective against bacterial infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic B')">
+            <h3>Antibiotic B</h3>
+            <p>Indication: Treats respiratory tract infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic C')">
+            <h3>Antibiotic C</h3>
+            <p>Indication: Used for skin infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic D')">
+            <h3>Antibiotic D</h3>
+            <p>Indication: Effective for urinary tract infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic E')">
+            <h3>Antibiotic E</h3>
+            <p>Indication: Used in dental procedures.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic F')">
+            <h3>Antibiotic F</h3>
+            <p>Indication: Treats gastrointestinal infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic G')">
+            <h3>Antibiotic G</h3>
+            <p>Indication: Effective for ear infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic H')">
+            <h3>Antibiotic H</h3>
+            <p>Indication: Used for severe bacterial infections.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic I')">
+            <h3>Antibiotic I</h3>
+            <p>Indication: Treats certain types of pneumonia.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Antibiotic J')">
+            <h3>Antibiotic J</h3>
+            <p>Indication: Effective against MRSA infections.</p>
+        </div>
+        <!-- Add more antibiotics as necessary -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function viewDrugDetails(drugName) {
+            alert(`Navigating to details of ${drugName}...`);
+            // Here you can redirect to the specific drug details page
+            // Example: window.location.href = "drug_details.html?drug=" + drugName;
+        }
+    </script>
+
+</body>
+</html>

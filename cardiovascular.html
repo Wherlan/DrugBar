@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular - drugBar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff; 
+            padding: 20px; 
+            color: white; 
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .drug-card {
+            background-color: #e9ecef; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        .drug-card:hover {
+            background-color: #ced4da; 
+        }
+        footer {
+            background-color: #007bff; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cardiovascular Medications</h1>
+        <p>List of available cardiovascular medications</p>
+    </header>
+
+    <section>
+        <h2 style="color: #007bff; margin-bottom: 20px;">Available Cardiovascular Medications</h2>
+        
+        <div class="drug-card" onclick="viewDrugDetails('Amlodipine')">
+            <h3>Amlodipine</h3>
+            <p>Indication: Used to treat high blood pressure and angina.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Lisinopril')">
+            <h3>Lisinopril</h3>
+            <p>Indication: Helps manage high blood pressure and heart failure.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Atorvastatin')">
+            <h3>Atorvastatin</h3>
+            <p>Indication: Reduces cholesterol levels and risk of heart disease.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Metoprolol')">
+            <h3>Metoprolol</h3>
+            <p>Indication: Used to treat high blood pressure and heart rhythm disorders.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Clopidogrel')">
+            <h3>Clopidogrel</h3>
+            <p>Indication: Antiplatelet agent to prevent blood clots.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Losartan')">
+            <h3>Losartan</h3>
+            <p>Indication: Used to treat high blood pressure and protect kidney function.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Digoxin')">
+            <h3>Digoxin</h3>
+            <p>Indication: Used to treat heart failure and irregular heartbeats.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Furosemide')">
+            <h3>Furosemide</h3>
+            <p>Indication: Used to treat edema and high blood pressure.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Simvastatin')">
+            <h3>Simvastatin</h3>
+            <p>Indication: Lowers cholesterol and triglyceride levels.</p>
+        </div>
+        <div class="drug-card" onclick="viewDrugDetails('Warfarin')">
+            <h3>Warfarin</h3>
+            <p>Indication: Anticoagulant used to prevent blood clots.</p>
+        </div>
+        <!-- Add more cardiovascular medications as necessary -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function viewDrugDetails(drugName) {
+            alert(`Navigating to details of ${drugName}...`);
+            // Here you can redirect to the specific drug details page
+            // Example: window.location.href = "drug_details.html?drug=" + drugName;
+        }
+    </script>
+
+</body>
+</html>

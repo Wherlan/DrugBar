@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - drugBar</title>
+    <script>
+        function registerUser(event) {
+            event.preventDefault(); // Prevent form submission for demo
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const address = document.getElementById("address").value;
+
+            // Basic validation
+            if (fullName && email && password && phoneNumber && address) {
+                // Store user data in localStorage
+                localStorage.setItem("registeredFullName", fullName);
+                localStorage.setItem("registeredEmail", email);
+                localStorage.setItem("registeredPassword", password);
+                localStorage.setItem("registeredPhoneNumber", phoneNumber);
+                localStorage.setItem("registeredAddress", address);
+
+                alert("Registration successful! You can now log in.");
+                window.location.href = "login.html"; // Redirect to login page
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #f8f9fa;">
+
+    <header style="background-color: #007bff; padding: 20px; color: white; text-align: center;">
+        <h1 style="margin: 0;">Sign Up for drugBar</h1>
+    </header>
+
+    <section style="padding: 40px; max-width: 400px; margin: 0 auto;">
+        <h2 style="color: #007bff; margin-bottom: 20px; text-align: center;">Create Your Account</h2>
+        <form onsubmit="registerUser(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" id="fullName" placeholder="Full Name" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <input type="email" id="email" placeholder="Email Address" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <input type="password" id="password" placeholder="Password" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+            <textarea id="address" placeholder="Address" required style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px; height: 60px;"></textarea>
+            <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Sign Up</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            Already have an account? <a href="login.html" style="color: #007bff; text-decoration: none;">Log in here</a>
+        </p>
+    </section>
+
+    <footer style="background-color: #007bff; color: white; text-align: center; padding: 20px;">
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

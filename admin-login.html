@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - drugBar</title>
+    <script>
+        function validateAdminLogin(event) {
+            event.preventDefault(); // Prevent form submission for demo purposes
+            const email = document.getElementById("admin-email").value;
+            const password = document.getElementById("admin-password").value;
+
+            // Hardcoded admin credentials for testing
+            const validAdminEmail = "admin@example.com";
+            const validAdminPassword = "admin123";
+
+            // Validate the admin email and password
+            if (email === validAdminEmail && password === validAdminPassword) {
+                alert("Admin login successful! Redirecting...");
+                // Redirect to admin dashboard
+                window.location.href = "admin-dashboard.html";
+            } else {
+                alert("Invalid admin email or password. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #e9f5f0;">
+
+    <header style="background-color: #2E8B57; padding: 20px; color: white; text-align: center;">
+        <h1 style="margin: 0;">Admin Login - drugBar</h1>
+    </header>
+
+    <section style="padding: 40px; max-width: 400px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 50px;">
+        <h2 style="color: #2E8B57; margin-bottom: 20px; text-align: center;">Admin Access</h2>
+        <form onsubmit="validateAdminLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="email" id="admin-email" placeholder="Admin Email Address" required style="padding: 12px; border: 1px solid #ced4da; border-radius: 5px; font-size: 16px;">
+            <input type="password" id="admin-password" placeholder="Password" required style="padding: 12px; border: 1px solid #ced4da; border-radius: 5px; font-size: 16px;">
+            <button type="submit" style="padding: 12px; background-color: #2E8B57; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Login</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+            <a href="forgot-password.html" style="color: #2E8B57; text-decoration: none;">Forgot Password?</a>
+        </p>
+    </section>
+
+    <footer style="background-color: #2E8B57; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+        <p>&copy; 2024 drugBar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
